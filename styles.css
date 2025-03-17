@@ -1,0 +1,31 @@
+/* Estilo del encabezado */
+h1 {
+    color: #ff6600;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Fondo de la página */
+body {
+    background-color: #f4f4f4;
+}
+
+/* Estilos del contenedor de mensajes */
+.stChatMessage {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Mensajes del usuario */
+.stChatMessage.user {
+    background-color: #0078ff;
+    color: white;
+    text-align: right;
+}
+
+/* Mensajes de Gemini */
+.stChatMessage.assistant {
+    background-color: #e3e3e3;
+    text-align: left;
+}
