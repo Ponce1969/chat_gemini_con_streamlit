@@ -1,0 +1,14 @@
+version: '3.10'
+services:
+  postgres:
+    image: postgres:16
+    container_name: chatbot_db
+    restart: always
+    env_file: .env
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+volumes:
+  pgdata:

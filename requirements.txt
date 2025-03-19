@@ -29,3 +29,5 @@ tornado==6.4.2
 tzdata==2025.1
 #entorno .env
 python-dotenv-1.0.1
+# postgresql librerias
+psycopg2-binary==2.9.10
