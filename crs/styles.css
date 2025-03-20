@@ -22,6 +22,20 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: auto;
+    width: 100%;
+}
+
+/* Ajustar el contenedor principal de Streamlit */
+.stApp, .stAppViewContainer, .stMainBlockContainer {
+    max-width: 100% !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+/* Asegurar que los bloques de markdown se ajusten correctamente */
+.st-emotion-cache-1yiq2ps, .st-emotion-cache-1d2o6qs, .st-emotion-cache-0 {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
 }
 
 /* 📌 Mensajes del usuario */
@@ -48,16 +62,68 @@
     margin: 8px 0;
     font-size: 16px;
     font-weight: 600; /* Un poco menos bold para más elegancia */
-    max-width: 80%;
-    display: inline-block;
+    width: 100%; /* Ancho completo para mejor adaptabilidad */
+    max-width: 100%; /* Asegurar que no exceda el ancho del contenedor padre */
+    display: block; /* Cambio a block para ocupar todo el ancho disponible */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    overflow-wrap: break-word; /* Permitir que las palabras largas se dividan */
+    white-space: normal; /* Cambio a normal para mejor manejo de texto */
+    overflow-x: hidden; /* Ocultar desbordamiento horizontal */
+    box-sizing: border-box; /* Incluir padding y border en el ancho total */
 }
 
 /* 📌 Efecto hover en los mensajes */
 .user-message:hover, .assistant-message:hover {
     opacity: 0.9;
-    transform: scale(1.02);
     transition: 0.3s;
+}
+
+/* 📌 Estilo específico para bloques de código dentro de los mensajes */
+.assistant-message pre, .assistant-message code {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    overflow-x: hidden !important; /* Ocultar completamente el scroll horizontal */
+    max-width: 100%;
+    display: block;
+    margin: 10px 0;
+    white-space: pre-wrap !important; /* Forzar el ajuste de línea */
+    word-break: break-word !important; /* Forzar que las palabras se rompan si es necesario */
+    box-sizing: border-box; /* Incluir padding y border en el ancho total */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos si el texto se corta */
+}
+
+/* Estilo para elementos de código generados por Streamlit */
+.stMarkdown pre {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+}
+
+/* Forzar que todos los elementos de código se ajusten al contenedor */
+pre, code {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+}
+
+/* Estilos adicionales para garantizar que no haya desbordamiento */
+.element-container, .stMarkdown, .markdown-text-container {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+}
+
+/* Asegurar que las líneas largas se dividan */
+p, div, span {
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
 }
 
 /* 📌 Estilo del input del chat */
